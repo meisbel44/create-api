@@ -47,6 +47,9 @@ function UpdateForm() {
  
   return (
     <form>
+      <h2 className='.Cabecera'>Datos del usuario</h2>
+      <hr/>
+      <div>
       <label htmlFor="name">Nombre:</label>
       <input
         type="text"
@@ -55,6 +58,8 @@ function UpdateForm() {
         value={formData.name}
         onChange={handleChange}
       />
+      </div>
+      <div>
       <label htmlFor="age">Edad:</label>
       <input
         type="number"
@@ -63,11 +68,15 @@ function UpdateForm() {
         value={formData.age}
         onChange={handleChange}
       />
+      </div>
+      <div>
       <label htmlFor="sex">Sexo:</label>
       <select id="sex" name="sex" value={formData.sex} onChange={handleChange}>
         <option value="M">Masculino</option>
         <option value="F">Femenino</option>
       </select>
+      </div>
+      <hr/>
         <button type="submit" onClick={handleSubmit}>Actualizar Usuario</button>
     </form>
   );
