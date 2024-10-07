@@ -23,14 +23,19 @@ function UserForm({ onSubmit }) {
 
   return (
     <form>
+      <div className='container'>
       <label>
         Name:
         <input type="text" name="name" value={formData.name} />
       </label>
+      </div>
+      <br/>
+      <div></div>
       <label>
         Age:
         <input type="number" name="age" value={formData.email} />
       </label>
+      <br/>
       <label>
         Sex:
         <select name="sex">
@@ -38,6 +43,7 @@ function UserForm({ onSubmit }) {
             <option value='M'>F</option>
         </select>
       </label>
+      <br/>
       <Link href="/editUser">
         <button>Adicionar Usuario</button>
       </Link>

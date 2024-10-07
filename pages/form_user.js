@@ -41,28 +41,37 @@ function UserForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Datos del usuario</h2>
+      <hr/>
+      <div>
       <label htmlFor="name">Nombre:</label>
-      <input
+      <input 
         type="text"
         id="name"
         name="name"
         value={formData.name}
         onChange={handleChange}
       />
+      </div>
+      <div>
       <label htmlFor="age">Edad:</label>
-      <input
+      <input 
         type="number"
         id="age"
         name="age"
         value={formData.age}
         onChange={handleChange}
       />
+      </div>
+      <div>
       <label htmlFor="sex">Sexo:</label>
       <select id="sex" name="sex" value={formData.sex} onChange={handleChange}>
         <option value="M" default>Masculino</option>
         <option value="F">Femenino</option>
       </select>
-        <button type="submit">Crear Usuario</button>
+      <hr/>
+      </div>
+        <button type="submit" className='button ghost'>Crear Usuario</button>
     </form>
   );
 }

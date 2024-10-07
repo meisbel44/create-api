@@ -5,8 +5,8 @@ import GetUsers from './GetUser';
 function Tabla() {
     const users = GetUsers();
     return (
-        <table className="table-responsive table-striped table-bordered">
-          <thead className='thead-fixed '>
+        <table className="table table-hover table-bordered">
+          <thead className="thead-dark">
             <tr>
               <th>ID</th>
               <th>Nombre</th>
