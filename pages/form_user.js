@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Router, { useRouter } from 'next/router';
-import Link from 'next/link';
 
 function UserForm() {
   const [formData, setFormData] = useState({
@@ -18,10 +17,9 @@ function UserForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Aquí enviarías los datos a tu API para crear el usuario
+
     console.log('Datos del formulario:', formData);
 
-    // Ejemplo de envío a una API (reemplaza con tu endpoint real)
     const response = await fetch('/api/create', {
       method: 'POST',
       headers: {
@@ -32,7 +30,6 @@ function UserForm() {
 
     if (response.ok) {
       console.log('Usuario creado exitosamente');
-      // Redirige o muestra un mensaje de éxito
       Router.push('/');
     } else {
       console.error('Error al crear el usuario');

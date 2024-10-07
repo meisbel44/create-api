@@ -47,7 +47,7 @@ function UpdateForm() {
  
   return (
     <form>
-      <h2 className='.Cabecera'>Datos del usuario</h2>
+      <h2>Datos del usuario</h2>
       <hr/>
       <div>
       <label htmlFor="name">Nombre:</label>

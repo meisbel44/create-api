@@ -1,15 +1,15 @@
-// pages/api/edit.js
 import { createConnection } from 'mysql2/promise';
 
-// Function to create a MySQL connection
+
 async function connectToDatabase() {
-    return createConnection({
-      host: 'localhost',//'sql5.freemysqlhosting.net',
-      user: 'sql5734574',
-      password: 'dq2tdplSjH',
-      database: 'sql5734574',
-    });
-  }
+  return createConnection({
+    host: 'sql5.freemysqlhosting.net',
+    user: 'sql5734574',
+    password: 'dq2tdplSjH',
+    database: 'sql5734574',
+    port: 3306,
+  });
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -23,21 +23,16 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Connect to the database
     const connection = await connectToDatabase();
 
-    // Execute a query to retrieve data from the "User" table
     const [rows] = await connection.execute('SELECT * FROM Usuario WHERE ID = ?', [user_id]);
 
-    // Check if the User exists
     if (rows.length === 0) {
       return res.status(404).json({ error: 'User not found.' });
     }
 
-    // Close the database connection
     await connection.end();
 
-    // Respond with the User data
     res.status(200).json(rows);
   } catch (error) {
     console.error('Error connecting to the database:', error);

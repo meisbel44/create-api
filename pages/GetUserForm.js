@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import UpdateForm from './update';
 import GUser from '@/components/user';
 
@@ -29,5 +28,3 @@ export default function GetUserForm({id}) {
     }
   }
 }
-
-//export default GetUserForm;
