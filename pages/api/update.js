@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   }
 
   const { id, name, age, sex } = req.body;
-  console.log(req.body);
+  console.log("Cuerpo de la consulta: ",req.body);
 
   if (!id || !name || !age || !sex) {
     return res.status(400).json({ error: 'id, name, age and sex are required in the request body.' });

@@ -1,23 +1,35 @@
 import React, { useState, useEffect } from 'react';
 
-function GUser({id}) {
+function GUser({ id }) {
   const [user, setUsers] = useState([]);
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      const response = await fetch('/api/userid', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id }),
-      });
-      const data = await response.json();
-      setUsers(data);
+    const fetchUser = async () => {
+      try {
+        const response = await fetch('/api/userid', {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          setUser(data);
+        } else {
+          console.error('Error fetching user:', data.error);
+        }
+      } catch (error) {
+        console.error('Error fetching user:', error);
+      }
     };
 
-    fetchUsers();
-  }, []);
+    fetchUser();
+  }, [id]);
 
-  console.log("user",data.Nombre);
+  if (!user) {
+    return <div>Loading...</div>;
+  }
 
   return user;
 }

@@ -29,6 +29,7 @@ button {
   line-height: 1;
   margin: 0.5em;
   padding: 1em 2em;
+  border-radius: 10px;
 }
 
 body {
@@ -99,4 +100,40 @@ div {
   margin: 5px;
   padding: 5px;
   text-align: center;
+}
+
+.btn {
+  border: none; 
+  color: white; 
+  padding: 14px 28px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+}
+.primary {background-color: #007bff;} 
+.primary:hover {background: #0b7dda;}
+.secondary {background-color: #e7e7e7; color: black;} 
+.secondary:hover {background: #ddd;}
+.success {background-color: #04AA6D;} 
+.success:hover {background-color: #46a049;}
+.warning {background-color: #ff9800;} 
+.warning:hover {background: #e68a00;}
+.danger {background-color: #f44336;} 
+.danger:hover {background: #da190b;}
+
+.pulse-effect {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #007bff; /* Color base del botón */
+  transition: transform 0.3s ease-in-out; /* Transición suave del efecto de pulsación */
+}
+
+.pulse-effect:hover {
+  background-color: #0056b3; /* Cambia el color al pasar el cursor sobre el botón */
+}
+
+.pulse-effect:active {
+  transform: scale(0.90); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
 }

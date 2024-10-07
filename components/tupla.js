@@ -10,6 +10,13 @@ const Tupla = ({ id, name, age, sex }) =>{
       <td>{age}</td>
       <td>{sex}</td>
       <td>
+      <ButtonsUpdate
+            class ="button ghost"
+            id = {id}
+            name = {name}
+            age ={age}
+            sex = {sex}
+        />
         <Buttons
             class ="button ghost"
             id = {id}

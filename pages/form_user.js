@@ -71,7 +71,7 @@ function UserForm() {
       </select>
       <hr/>
       </div>
-        <button type="submit" className='button ghost'>Crear Usuario</button>
+        <button type="submit" className='btn pulse-effect'>Crear Usuario</button>
     </form>
   );
 }
