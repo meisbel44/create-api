@@ -41,9 +41,9 @@ function UserForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Datos del usuario</h2>
+      <h2 className='.Cabecera'>Datos del usuario</h2>
       <hr/>
-      <div>
+      <div><div className='Cabecera'>
       <label htmlFor="name">Nombre:</label>
       <input 
         type="text"
@@ -51,7 +51,7 @@ function UserForm() {
         name="name"
         value={formData.name}
         onChange={handleChange}
-      />
+      /></div>
       </div>
       <div>
       <label htmlFor="age">Edad:</label>
