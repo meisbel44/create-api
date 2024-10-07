@@ -27,7 +27,7 @@ console.log(req.body.user_id)
     const connection = await connectToDatabase();
 
     // Execute a query to delete the user from the "users" table
-    const [result] = await connection.execute('DELETE FROM usuario WHERE id = ?', [user_id]);
+    const [result] = await connection.execute('DELETE FROM Usuario WHERE ID = ?', [user_id]);
 
     // Close the database connection
     await connection.end();

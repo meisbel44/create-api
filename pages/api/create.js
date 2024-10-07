@@ -6,13 +6,14 @@ import { useRouter } from 'next/router';
 
 // Function to create a MySQL connection
 async function connectToDatabase() {
-    return createConnection({
-      host: 'localhost',//'sql5.freemysqlhosting.net',
-      user: 'sql5734574',
-      password: 'dq2tdplSjH',
-      database: 'sql5734574',
-    });
-  }
+  return createConnection({
+    host: 'sql5.freemysqlhosting.net',
+    user: 'sql5734574',
+    password: 'dq2tdplSjH',
+    database: 'sql5734574',
+    port: 3306,
+  });
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -32,7 +33,7 @@ export default async function handler(req, res) {
     const connection = await connectToDatabase();
 
     // Execute a query to retrieve data from the "user" table
-    const [result] = await connection.execute('INSERT INTO usuario (Nombre, Edad, Sexo) VALUES (?, ?, ?)', [
+    const [result] = await connection.execute('INSERT INTO Usuario (Nombre, Edad, Sexo) VALUES (?, ?, ?)', [
       name,
       age,
       sex,

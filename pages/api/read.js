@@ -4,10 +4,11 @@ import { createConnection } from 'mysql2/promise';
 // Function to create a MySQL connection
 async function connectToDatabase() {
   return createConnection({
-    host: 'localhost',//'sql5.freemysqlhosting.net',
+    host: 'sql5.freemysqlhosting.net',
     user: 'sql5734574',
     password: 'dq2tdplSjH',
     database: 'sql5734574',
+    port: 3306,
   });
 }
 
@@ -21,7 +22,7 @@ export default async function handler(req, res) {
     const connection = await connectToDatabase();
 
     // Execute a query to retrieve data from the "User" table
-    const [rows] = await connection.execute('SELECT * FROM usuario', );
+    const [rows] = await connection.execute('SELECT * FROM Usuario', );
 
     // Check if the User exists
     if (rows.length === 0) {
